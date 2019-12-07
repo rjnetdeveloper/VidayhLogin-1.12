@@ -1,0 +1,206 @@
+﻿@page
+@model VidayhLogin.Pages.ProfileModel
+@{
+    Layout = null;
+}
+
+@using Microsoft.AspNetCore.Http
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+
+    <meta charset="utf-8">
+    <title>Princetonhive</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://princetonhive.com/img/favicon.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/normalize.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/fonts/flaticon.css">
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/fullcalendar.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/css/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://princetonhive.com/style.css">
+    <!-- Modernize js -->
+    <script src="https://princetonhive.com/js/modernizr-3.6.0.min.js"></script>
+
+
+    <style type=”text/css”>
+        body {
+            scrolling: no;
+        }
+
+        iframe {
+            position: absolute;
+            z-index: 1;
+            top: 0px;
+            left: 0px;
+            border: 0 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Preloader Start Here -->
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+        <!-- Header Menu Area Start Here -->
+        <div class="navbar navbar-expand-md header-menu-one bg-light">
+            <div class="nav-bar-header-one">
+                <div class="header-logo">
+                    <a href="dashboard">
+
+                        @if (@HttpContext.Session.GetString("Logo") != "")
+                        {
+                            <img src="https://princetonhive.com/img/@HttpContext.Session.GetString("Logo")" alt="logo">@HttpContext.Session.GetString("SchoolName")
+                        }
+                        else
+                        {
+                            <img src="https://princetonhive.com/img/logoschool3.png" alt="logo">@HttpContext.Session.GetString("SchoolName")
+                        }
+
+                    </a>
+                </div>
+
+            </div>
+            <div class="d-md-none mobile-nav-bar">
+                <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                </button>
+            </div>
+            <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+
+                <ul class="navbar-nav">
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar"></li>
+                    <li class="navbar-item header-search-bar">
+                        <img src="https://princetonhive.com/img/logo.png" alt="logo" style="text-align:left">
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="navbar-item dropdown header-admin">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                           aria-expanded="false">
+                            <div class="admin-title">
+                                <h5 class="item-title">Welcome @HttpContext.Session.GetString("firstname")</h5>
+                                @*<span>Admin</span>*@
+                            </div>
+                            <div class="admin-img">
+                                <img src="https://princetonhive.com/img/figure/admin.jpg" alt="Admin">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="item-header">
+                                <h6 class="item-title">Administration Zone</h6>
+                            </div>
+                            <div class="item-content">
+                                <ul class="settings-list">
+                                    <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
+                                    <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                    <li><a href="https://princetonhive.com/Logout"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- Header Menu Area End Here -->
+        <!-- Page Area Start Here -->
+        <!-- Sidebar Area End Here -->
+        <div class="dashboard">
+          
+
+            <!-- Breadcubs Area End Here -->
+            <!-- Dashboard Content Start Here -->
+
+            <div class="card height-auto">
+                <div>
+                    <div class="heading-layout1">
+
+
+
+                        <div align="left">
+                            <table class="table display data-table text-nowrap dataTable no-footer">
+                                <tr role="row">
+                                    <td> Name: </td>
+                                    <td> @HttpContext.Session.GetString("firstname")</td>
+                                </tr>
+
+                                <tr role="row">
+                                    <td> Class: </td>
+                                    <td> @HttpContext.Session.GetString("Class")</td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content End Here -->
+        </div>
+        <!-- Footer Area Start Here -->
+        <footer class="footer-wrap-layout1">
+            <div class="copyright" align="center">Princetonhive 2019. All rights reserved.</div>
+        </footer>
+        <!-- Footer Area End Here -->
+    </div>
+    </div>
+    <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <script src="https://princetonhive.com/js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="https://princetonhive.com/js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="https://princetonhive.com/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://princetonhive.com/js/bootstrap.min.js"></script>
+    <!-- Counterup Js -->
+    <script src="https://princetonhive.com/js/jquery.counterup.min.js"></script>
+    <!-- Moment Js -->
+    <script src="https://princetonhive.com/js/moment.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="https://princetonhive.com/js/jquery.waypoints.min.js"></script>
+    <!-- Scroll Up Js -->
+    <script src="https://princetonhive.com/js/jquery.scrollUp.min.js"></script>
+    <!-- Full Calender Js -->
+    <script src="https://princetonhive.com/js/fullcalendar.min.js"></script>
+    <!-- Chart Js -->
+    <script src="https://princetonhive.com/js/Chart.min.js"></script>
+    <!-- Custom Js -->
+    <script src="https://princetonhive.com/js/main.js"></script>
+
+</body>
+
+</html>

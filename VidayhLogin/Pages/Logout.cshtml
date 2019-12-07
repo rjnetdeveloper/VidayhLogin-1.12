@@ -1,0 +1,31 @@
+﻿@page
+@model VidayhLogin.Pages.LogoutModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script>
+            $(document).ready(function () {
+              //  alert("AA");
+             //   alert(top.location.href);
+                var myframe = top.location.href;
+
+                if (myframe == "https://princetonhive.com/Dashboard") {
+                    top.sessionStorage.clear();
+                top.location.replace("https://princetonhive.com/")
+
+            }
+            });
+    </script>
+</head>
+<body>
+</body>
+</html>

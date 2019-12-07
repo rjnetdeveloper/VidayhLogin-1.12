@@ -1,0 +1,518 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <title>Princetonhive :: a hive of global learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/stylehome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            function disableBack() { window.history.forward() }
+
+            window.onload = disableBack();
+            window.onpageshow = function (evt) { if (evt.persisted) disableBack() }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            //  alert("AA");
+            //   alert(top.location.href);
+            var myframe = top.location.href;
+
+            if (myframe == "https://princetonhive.com/Dashboard") {
+                top.sessionStorage.clear();
+                top.location.replace("https://princetonhive.com/")
+
+            }
+        });
+    </script>
+
+    <script>
+
+        // Function to check Whether both passwords
+        // is same or not.
+        function checkPassword(form) {
+            username2 = form.Username2.value;
+            OldPassword = form.OldPassword.value;
+            NewPassword = form.NewPassword.value;
+            ConfirmPassword = form.ConfirmPassword.value;
+
+            // If password not entered
+            if (username2 == '')
+                alert("Please enter UserName");
+
+            // If confirm password not entered
+            else if (OldPassword == '')
+                alert("Please enter Old Password");
+
+            else if (NewPassword == '')
+                alert("Please enter New Password");
+
+            else if (ConfirmPassword == '')
+                alert("Please enter Confirm Password");
+
+            // If Not same return False.
+            else if (NewPassword != ConfirmPassword) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            }
+
+            // If same return True.
+            else {
+              
+                return true;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id=ftco-navbar>
+        <div class=container>
+            <a class=navbar-brand href=index><img src="images/logo/logo.png" class="img-fluid" alt="Princetonhive"></a>
+            <button class=navbar-toggler type=button data-toggle=collapse data-target="#ftco-nav" aria-controls=ftco-nav aria-expanded=false aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id=ftco-nav>
+                <ul class="navbar-nav ml-auto">
+                    <li class=nav-item><a href=index class=nav-link>Home</a></li>
+                    <li class=nav-item><a href=school class=nav-link>School</a></li>
+                    <li class=nav-item><a href=university class=nav-link>University</a></li>
+                    <li class=nav-item><a href=contact class=nav-link>Contact</a></li>
+                </ul>
+            </div>
+            <div class=outer-box><a href="#" data-toggle=modal data-target="#login">Login</a> </div>
+        </div>
+    </nav>
+    <div class=hero-wrap align=center>
+        <img class="img-fluid animatedbing" src="images/bings-animated.gif" alt=Princetonhive>
+        <img class=img-fluid data-wow-delay=0ms data-wow-duration=1500ms src="images/map_Princetonhive.gif" alt=Princetonhive>
+    </div>
+    <section class="ftco-section ftco-counter img" id=section-counter>
+        <div class=container>
+            <div class="row justify-content-center mb-5">
+            </div>
+            <div class="row justify-content-center">
+                <div class=col-md-12>
+                    <div class=row>
+                        <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class=text>
+                                    <strong> <h2 class=text-white>Skill Seekers + Skill Providers</h2></strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class=text>
+                                    <strong> <h2 class=text-white>80+</span> Countries</h2></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center heading-section ftco-animate">
+                    <h4> <br /> <span class=text-white> Powered by Belouga, USA </span><br /> </h4>
+                </div>
+                <h1 align=center class=textyellow> NOW ALSO IN INDIA </h1>
+            </div>
+        </div>
+    </section>
+    <section class=ftco-section>
+        <div class=container>
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-12 text-center heading-section ftco-animate">
+                    <h3 class=mb-4>Bring the 21st Century Skills into your Classroom</h3>
+                    <p>...and out to the World </p>
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="col-lg-4 col-md-6  mb-4  ftco-animate fadeInUp ftco-animated">
+                    <div class=yellowbox>
+                        <div class=block-skills>
+                            <div class=text-center>
+                                <a href=school>
+                                    <img class=img-fluid src="images/icons/school.png" alt=School>
+                                    <h2 class=heading>School</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6  mb-4  ftco-animate fadeInUp ftco-animated">
+                    <div class=yellowbox>
+                        <div class="block-skills hover">
+                            <div class=text-center>
+                                <a href=university>
+                                    <img class=img-fluid src="images/icons/universities.png" alt=Universities>
+                                    <h2 class=heading>Universities</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6  mb-4  ftco-animate fadeInUp ftco-animated">
+                    <div class=yellowbox>
+                        <div class=block-skills>
+                            <div class=text-center>
+                                <a href="#">
+                                    <img class=img-fluid src="images/icons/teacher.png" alt=Teachers>
+                                    <h2 class=heading>Teachers</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section services-section bg-light ">
+        <div class=bg1>
+            <div class="">
+                <div class=row>
+                    <div class="col-md-7 ">
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class="col-md-12 ">
+                                <div class=row>
+                                    <div class=col-md-3> <img src="images/icons/scholicon.png" class=img-fluid> </div>
+                                    <div class=col-md-9>
+                                        <h1 class=heading>
+                                            <br /> A new Class of<br />
+                                            Educational Experience
+                                        </h1>
+                                        <h4 class=mb-20>
+                                            providing the resource and network for personalised
+                                            student and teacher learning journeys
+                                        </h4>
+                                        <br />
+                                        <p><a href=school class="btn btn-primary px-5 py-2">KNOW MORE</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 ftco-animate">
+                        <img src="images/pic/classroom.png" class=img-fluid>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+        <div class=container>
+            <div class=row>
+                <div class="col-lg-6 py-5">
+                    <img src="images/pic/teaher.png" class=img-fluid alt="">
+                </div>
+                <div class=col-lg-6>
+                    <div class=row>
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class="mtop100 padleft100">
+                                <h1 class=heading>
+                                    Local educators <br />
+                                    reaching the world!
+                                </h1>
+                                <p class=mb-0>
+                                    Educate the world of tomorrow, today by
+                                    global collabration
+                                </p>
+                                <p class=py-5><a href="#" class="btn btn-primary px-5 py-2">KNOW MORE</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="ftco-section bg-light">
+        <div class=container>
+            <div class=row>
+                <div class="col-lg-6 py-5">
+                    <img src="images/pic/students.png" class=img-fluid>
+                </div>
+                <div class=col-lg-6>
+                    <div class=row>
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class="mtop150 padleft100">
+                                <h1 class=heading>The newer version<br />of a Rockstar</h1>
+                                <p><a href=school class="btn btn-primary px-5 mtop50">KNOW MORE</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+        <div class=container>
+            <div class=row>
+                <div class=col-lg-6>
+                    <div class=row>
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class=mtop100>
+                                <h1 class=heading>
+                                    A Global Digital <br />
+                                    Learning Environment!
+                                </h1>
+                                <p class=mb-0>
+                                    How would learning in your classroom look without any limitation?
+                                    with access to the world at your fingertips...
+                                </p>
+                                <h4 class="py-4 txtcolor">The possibilities are endless. </h4>
+                                <p class=py-2><a href=university class="btn btn-primary px-5 py-2">REGISTER NOW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 py-5">
+                    <img src="images/pic/university.png" class=img-fluid>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="ftco-section bg-light">
+        <div class=container>
+            <div class=row>
+                <div class="col-lg-6 py-5">
+                    <img src="images/pic/goals.png" class=img-fluid>
+                </div>
+                <div class=col-lg-6>
+                    <div class=row>
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class="mtop50 padleft20">
+                                <h3 class=heading>
+                                    Theme based programs and learning based
+                                    on United Nations Sustainable
+                                    Development Goals 2030
+                                </h3>
+                                <p><a href=contact class="btn btn-primary px-5 mtop50">CONTACT US</a></p>
+                                <img src="images/pic/goal-logo.png" class=img-fluid alt="" style="float:right;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class=container>
+            <div class="row mb-5">
+                <div class=col-md>
+                    <div class="ftco-footer-widget mb-4">
+                        <img src="images/logo/footer-logo.png" class=img-fluid alt=""> <br /> <br />
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><a href="mailto:info@princetonhive.com"><span class="icon icon-envelope"></span><span class="text txticons">info@princetonhive.com</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text txticons">100 Overlook Center, Princeton, NJ </span></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text txticons">Gurgoan, Haryana </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class=col-md>
+                    <div class="ftco-footer-widget mb-4  ml-md-5">
+                        <h2 class=ftco-heading-2>&nbsp;</h2>
+                        <h2 class=ftco-heading-2>&nbsp;</h2>
+                        <ul class=list-unstyled>
+                            <li><a href=index class="py-2 d-block">Home</a></li>
+                            <li><a href=school class="py-2 d-block">School</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class=col-md>
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class=ftco-heading-2>&nbsp;</h2>
+                        <h2 class=ftco-heading-2>&nbsp;</h2>
+                        <ul class=list-unstyled>
+                            <li><a href=university class="py-2 d-block">University</a></li>
+                            <li><a href=contact class="py-2 d-block">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class=col-md>
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class=ftco-heading-2>&nbsp;</h2>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                <div class="col-md-12 text-left">
+                    <p>
+                        <span class=text-footer-color>
+                            &copy; 2019-2020 Princetonhive.com. All rights reserved. Registered in New Jersey, USA. The PrincetonHive is not affiliated with Princeton University.<br />
+                            <a href=PrivacyPolicyTermsCondition> Privacy Policy </a> | <a href="PrivacyPolicyTermsCondition#terms"> Terms & Condition</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id=ftco-loader class="show fullscreen"><svg class=circular width=48px height=48px><circle class=path-bg cx=24 cy=24 r=22 fill=none stroke-width=4 stroke="#eeeeee" /><circle class=path cx=24 cy=24 r=22 fill=none stroke-width=4 stroke-miterlimit=10 stroke="#F96D00" /></svg></div>
+    @*<script src="js/jquery.min.js"></script>*@
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+    <div id=login class="modal fade" role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal>&times;</button>
+                </div>
+                <div class=modal-body>
+                    <div class=content>
+                        <p align=center><img src="images/logo/logo.png" class=img-fluid>@*<h5 class=modal-title align=center>Welcome Back</h5>*@ </p>
+                        <div class=container>
+                            <form method="post">
+                                <div style="display:none;">
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+
+                                        <input class=form-control asp-for="Username" required placeholder="Username" />
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input password">
+
+                                        <input type=password asp-for="Password" required placeholder="Password" class=form-control />
+                                    </div>
+                                </div>
+
+                                <div class=form-group>
+                                    <div>
+                                        @*<button class="btn" style="background-color: white; font-size:16px; font-weight:bold;  padding-top: 10px; color: black; width:100%;" type="submit">LOGIN</button>*@
+                                        <input type=submit class="btn" style="background-color: white; font-size:16px; font-weight:bold;  padding-top: 10px; color: black; width:100%;" name="savemore" value=LOGIN />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class=modal-footer>
+                            <a href="#" data-toggle=modal data-target="#change-pass" data-dismiss=modal>Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" data-toggle=modal data-target="#reset-pass" data-dismiss=modal>Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id=reset-pass class="modal fade" role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal>&times;</button>
+                </div>
+                <div class=modal-body>
+                    <div class=content>
+                        <p align=center><img src="images/logo/logo.png" class=img-fluid><h5 class=modal-title align=center>Recover Your Password</h5> </p>
+                        <div class=container>
+                            <form method=post>
+                                <div style="display:none;">
+                                    <input type=hidden name=_method value=POST />
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input class=form-control asp-for="Username1" required placeholder="Username" />
+
+                                    </div>
+                                </div>
+                                @*<div class=form-group>
+                                        <div class="input text">
+                                            <input class=form-control asp-for="Email" placeholder="Email Address" />
+
+                                        </div>
+                                    </div>*@
+                                <div class=form-group>
+                                    <div class=submit><input type=submit class="btn btn-primary" name="savemore" value="Send Password" /></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=change-pass class="modal fade" role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal>&times;</button>
+                </div>
+                <div class=modal-body>
+                    <div class=content>
+                        <p align=center><img src="images/logo/logo.png" class=img-fluid><h5 class=modal-title align=center>Change Your Password</h5> </p>
+                        <div class=container>
+                            <form method=post onSubmit = "return checkPassword(this)">
+                                <div style="display:none;">
+                                    <input type=hidden name=_method value=POST />
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input class=form-control asp-for="Username2" required placeholder="Username" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="OldPassword" required placeholder="Old Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="NewPassword" required placeholder="New Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="ConfirmPassword" required placeholder="Confirm Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class=submit><input type=submit class="btn btn-primary" name="savemore" value="Change Password" /></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

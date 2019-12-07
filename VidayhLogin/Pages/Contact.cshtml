@@ -1,0 +1,565 @@
+﻿@page
+@model VidayhLogin.Pages.ContactModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Princetonhive :: a hive of global learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            function disableBack() { window.history.forward() }
+
+            window.onload = disableBack();
+            window.onpageshow = function (evt) { if (evt.persisted) disableBack() }
+        });
+    </script>
+
+    <script>
+
+        function checkPassword(form) {
+            username2 = form.Username2.value;
+            OldPassword = form.OldPassword.value;
+            NewPassword = form.NewPassword.value;
+            ConfirmPassword = form.ConfirmPassword.value;
+
+            // If password not entered
+            if (username2 == '')
+                alert("Please enter UserName");
+
+            // If confirm password not entered
+            else if (OldPassword == '')
+                alert("Please enter Old Password");
+
+            else if (NewPassword == '')
+                alert("Please enter New Password");
+
+            else if (ConfirmPassword == '')
+                alert("Please enter Confirm Password");
+
+            // If Not same return False.
+            else if (NewPassword != ConfirmPassword) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            }
+
+            // If same return True.
+            else {
+
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index"><img src="images/logo/logo.png" alt="Princetonhive" title="Princetonhive"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="school" class="nav-link">School</a></li>
+                    <li class="nav-item"><a href="university" class="nav-link">University</a></li>
+                    <li class="nav-item active"><a href="contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="outer-box">
+                <!--Nav Toggler-->
+                <a href="#" data-toggle="modal" data-target="#login">Login</a> <!--| <a href="#" data-toggle="modal" data-target="#register" > Register</a>-->
+            </div>
+
+        </div>
+    </nav>
+    <!-- END nav -->
+
+
+
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6  mtop100" align="center">
+                    <h2 class="heading text-princetonhive-color mtop100 mbottom100" style="">Contact Us</h2>
+
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+        <div class="container">
+
+
+
+            <div class="row mtop50" align="center">
+
+                <div class="col-md-12" align="left"> <h4>Advisory board </h4> <br /> </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="images/team/Wendy.jpg" class="img-fluid" alt="" style="width:100%">
+                        <div class="container">
+                            <h4>Wendy Morales</h4>
+                            <p class="title">Phd in education, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images/team/Josue.jpg" class="img-fluid" alt="" style="width:100%">
+                        <div class="container">
+                            <h4>Josue Falaise</h4>
+                            <p class="title">Google certified innovator, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images/team/Marcos.jpg" class="img-fluid" alt="" style="width:100%">
+                        <div class="container">
+                            <h4>Marcos Navas</h4>
+                            <p class="title">TED speaker and renowned educator, USA</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images/team/Evin-Schwartz.jpg" class="img-fluid" alt="" style="width:100%">
+                        <div class="container">
+                            <h4>Evin Schwartz</h4>
+                            <p class="title">Founder and CEO Belouga, NYC</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images/team/pranav.jpg" class="img-fluid" alt="" style="width:100%">
+                        <div class="container">
+                            <h4>Pranav Prashar</h4>
+                            <p class="title">Microsoft Certified TechEducator, New Jersey</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-1"> </div>
+                <div class="col-lg-2 py-5">
+                    <img src="images/icons/scholicon.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-left">
+                            <div class="mtop100">
+                                <h3 class="heading" style="">Reach Us !</h3>
+
+                                <form method="post">
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" asp-for="SchoolName" required placeholder="School / University / Institute :" name="SchoolName">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" asp-for="Location" required placeholder="Location :" name="Location">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" asp-for="Name" required placeholder="Name :" name="Name">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <select class="form-control" asp-for="DesignationType" required name="DesignationType">
+                                                        <option value="">Designation :</option>
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="Teachers">Teachers</option>
+                                                        <option value="Staff">Staff</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" required class="form-control" asp-for="MobileNo" placeholder="Mobile No. :" name="MobileNo">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" required class="form-control" asp-for="EmailAddress" placeholder="Email Address :" name="EmailAddress">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea type="text" class="form-control" asp-for="Description" required placeholder="Description :" name="Description"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <h6 align="center" style="color:red; font-size:14px;font-weight:bold;"> @ViewData["message"]</h6>
+
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-10"> </div>
+
+                                                    <div class="col-md-2">
+                                                        <div class="form-group">
+                                                            <input type="submit" value="Submit" name="savemore" class="submitbtn py-2 px-3">
+                                                        </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-1"> </div>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+
+
+                        <div class="col-md-6  " align="left">
+                            <div class="inner-box">
+                                <h6> <strong> USA</strong> </h6>
+                                <hr />
+                                <p><span class="icon icon-map-marker"></span> 100 Overlook Center, Princeton, NJ </p>
+                                <!--<p><span class="icon icon-phone"></span> (413) 584-6500 </p>-->
+                                <p><span class="icon icon-envelope"></span> info@princetonhive.com </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 " align="left">
+                            <div class="inner-box">
+                                <h6> <strong> India</strong> </h6>
+                                <hr />
+                                <p><span class="icon icon-map-marker"></span> Gurgoan, Haryana </p>
+                                <!-- <p><span class="icon icon-phone"></span> (91) 584-6500 </p>-->
+                                <p><span class="icon icon-envelope"></span> support@princetonhive.com </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </section>
+
+    <br />
+
+
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+
+            <div class="row mb-5">
+
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <img src="images/logo/footer-logo.png" class="img-fluid" alt=""> <br /> <br />
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <!--<li><a href="tel:(413) 584-6500"><span class="icon icon-phone"></span><span class="text txticons">(413) 584-6500</span></a></li>-->
+                                <li><a href="mailto:info@princetonhive.com"><span class="icon icon-envelope"></span><span class="text txticons">info@princetonhive.com</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text txticons">100 Overlook Center, Princeton, NJ  </span></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text txticons">Gurgoan, Haryana  </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4  ml-md-5">
+                        <h2 class="ftco-heading-2">&nbsp;</h2>
+                        <h2 class="ftco-heading-2">&nbsp;</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="index" class="py-2 d-block">Home</a></li>
+                            <li><a href="school" class="py-2 d-block">School</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">&nbsp;</h2>
+                        <h2 class="ftco-heading-2">&nbsp;</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="university" class="py-2 d-block">University</a></li>
+                            <li><a href="contact" class="py-2 d-block">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">&nbsp;</h2>
+                        <!--  <h2 class="ftco-heading-2">Solutions</h2>
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-left">
+
+                    <p>
+                        <span class="text-footer-color">
+                            <!--Copyright--> &copy; 2019-2020 Princetonhive.com. All rights reserved. Registered in New Jersey, USA. The PrincetonHive is not affiliated with Princeton University.<br />
+                            <a href="PrivacyPolicyTermsCondition"> Privacy Policy </a> | <a href="PrivacyPolicyTermsCondition#terms"> Terms & Condition</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    @*<script src="js/jquery.min.js"></script>*@
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Login Modal -->
+    <div id=login class="modal fade" role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal>&times;</button>
+                </div>
+                <div class=modal-body>
+                    <div class=content>
+                        <p align=center><img src="images/logo/logo.png" class=img-fluid>@*<h5 class=modal-title align=center>Welcome Back</h5>*@ </p>
+                        <div class=container>
+                            <form method=post>
+                                <div style="display:none;">
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        @*<label for=username>Username or Email</label>*@
+                                        <input class=form-control asp-for="Username" required placeholder="Username" />
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input password">
+                                        @*<label for=password>Password</label>*@
+                                        <input type=password asp-for="Password" required placeholder="Password" class=form-control />
+                                    </div>
+                                </div>
+                                @*<div class=form-group>
+                                        <div class="input text">
+                                            <input type="radio" asp-for="Role" name="Role" value="Student" > Student
+                                            <input type="radio" asp-for="Role" name="Role" value="Teacher" checked="checked"> Teacher
+                                            <input type="radio" asp-for="Role" name="Role" value="School"> School
+                                        </div>
+                                    </div>*@
+                                <div class=form-group>
+                                    <div>
+                                        <input type="submit" value="LOGIN" name="savemore" class="btn" style="background-color: white; font-size:16px; font-weight:bold;  padding-top: 10px; color: black; width:100%;">
+                                        @*<button class="btn" style="background-color: white; font-size:16px; font-weight:bold;  padding-top: 10px; color: black; width:100%;" type="submit">LOGIN</button>*@
+                                        @*<input type="button" id="Save" value="Login" />*@
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class=modal-footer>
+                            <a href="#" data-toggle=modal data-target="#change-pass" data-dismiss=modal>Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" data-toggle=modal data-target="#reset-pass" data-dismiss=modal>Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+
+    <!-- PASSWORD RESET MODAL -->
+    <div id="reset-pass" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="content">
+                        <p align="center"><img src="images/logo/logo.png" class="img-fluid"><h5 class="modal-title" align="center">Recover Your Password</h5> </p>
+                        <div class=container>
+                            <form method=post>
+                                <div style="display:none;">
+                                    <input type=hidden name=_method value=POST />
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input class=form-control asp-for="Username1" placeholder="Username" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input class=form-control asp-for="Email" placeholder="Email Address" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class=submit><input type=submit class="btn btn-primary" name="savemore" value="Send Password" /></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=change-pass class="modal fade" role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal>&times;</button>
+                </div>
+                <div class=modal-body>
+                    <div class=content>
+                        <p align=center><img src="images/logo/logo.png" class=img-fluid><h5 class=modal-title align=center>Change Your Password</h5> </p>
+                        <div class=container>
+                            <form method=post onSubmit="return checkPassword(this)">
+                                <div style="display:none;">
+                                    <input type=hidden name=_method value=POST />
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input class=form-control asp-for="Username2" required placeholder="Username" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="OldPassword" required placeholder="Old Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="NewPassword" required placeholder="New Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class="input text">
+                                        <input type="password" class=form-control asp-for="ConfirmPassword" required placeholder="Confirm Password" />
+
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class=submit><input type=submit class="btn btn-primary" name="savemore" value="Change Password" /></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
+
+</body>
+</html>
