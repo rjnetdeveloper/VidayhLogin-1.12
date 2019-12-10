@@ -35,6 +35,7 @@ namespace VidayhLogin.Pages
 
         public void OnGet()
         {
+            
             //var token = HttpContext.Session.GetString("token");
             //if (token != null)
             //{

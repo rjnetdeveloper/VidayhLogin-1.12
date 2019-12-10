@@ -97,39 +97,29 @@ namespace Registration.Pages
         public string StudentEmail { get; set; }
         [BindProperty]
         public string StudentUserName { get; set; }
-        public IList<TblRegistration> Schools { get; private set; }
-        List<TblRegistration> Schools1 = new List<TblRegistration>();
+        public List<TblRegistration> Schools { get; set; }
+
         public IList<TblStateMaster> States { get; private set; }
-        List<TblStateMaster> States1 = new List<TblStateMaster>();
 
         public IList<TblCountryMaster> Countrys { get; private set; }
-        List<TblCountryMaster> Country1 = new List<TblCountryMaster>();
 
         public IList<TblRegistration> Class { get; private set; }
-        List<TblRegistration> Class1 = new List<TblRegistration>();
 
         public void OnGet()
         {
-            var schools = (from a in _context.TblRegistration
+            
+           Schools = (from a in _context.TblRegistration
                         where a.SchoolName != null && a.SchoolIdBelouga != null
-                        select new TblRegistration { SchoolName = a.SchoolName, SchoolIdBelouga = a.SchoolIdBelouga }).ToList();
+                        select new TblRegistration { SchoolName = a.SchoolName, SchoolIdBelouga = a.SchoolIdBelouga }).Distinct().ToList();
 
-            Schools = schools.ToList();
-
-            var states = (from a in _context.TblStateMaster
+            States = (from a in _context.TblStateMaster
                         select new TblStateMaster { Stateid = a.Stateid, StateName = a.StateName }).ToList();
 
-            States = states.ToList();
-
-            var countrys = (from a in _context.TblCountryMaster
+            Countrys = (from a in _context.TblCountryMaster
                           select new TblCountryMaster { Countryid = a.Countryid, CountryName = a.CountryName }).ToList();
 
-            Countrys = countrys.ToList();
-
-            var classes = (from a in _context.TblRegistration
+            Class = (from a in _context.TblRegistration
                             select new TblRegistration { ClassIdBelouga = a.ClassIdBelouga, Class = a.Class }).ToList();
-
-            Class = classes.ToList();
 
         }
 
