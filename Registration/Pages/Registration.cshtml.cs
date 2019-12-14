@@ -148,7 +148,15 @@ namespace Registration.Pages
                         Session = TeacherSession,
                         Email = TeacherEmail,
                         Username = TeacherUserName,
-                        SchoolIdBelouga = SchoolNameExisting
+                        SchoolIdBelouga = SchoolNameExisting,
+                        SchoolEmail = SchoolEmail,
+                        Address = SchoolAddress,
+                        City = SchoolCity,
+                        State = SchoolState,
+                        Country = SchoolCountry,
+                        PostalCode = SchoolPostalCode,
+                        SchoolPhone = SchoolPhoneNo,
+                        SchoolLogo = schoollogo
 
                     };
                     princetonhive.TblRegistration.Add(teacher);

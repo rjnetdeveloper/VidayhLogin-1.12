@@ -1,0 +1,236 @@
+﻿@page
+@model Registration.AddStudentModel
+@{
+    ViewData["Title"] = "AddStudent";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        var url = $("#urlpath").val();
+        
+        $('#StudentSchool').change(function () {
+
+            getclassByschool($(this).val());
+        });
+
+
+        function getclassByschool(id) {
+              url = url + 'api/Registration/GetClassBySchoolId/' + id;
+          //  var url = "http://localhost:16120/api/Registration/GetClassBySchoolId/" + id;
+            classdetails(id);
+        }
+
+    });
+</script>
+
+<script>
+    function classdetails(id) {
+        var i = 1;
+        var url = $("#urlpath").val();
+        $.ajax({
+
+            type: "GET",
+            url: url + 'api/Registration/GetClassBySchoolId/' + id,
+           // url: "http://localhost:16120/api/Registration/GetClassBySchoolId/" + id,
+
+            data: "[]",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+            success: function (data) {
+                $(StudentClass).empty();
+                var ddlOption = $("[id*=StudentClass]");
+                 ddlOption.empty().append('<option  value="" >Please select</option>')
+                $.each(data.data, function (index, item) {
+                    ddlOption.append($("<option></option>").val(item.Class).html(item.Class));
+                });
+
+
+            }
+        });
+    }
+</script>
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a href="AddStudent">Add Student</a></li>
+            <li ><a href="StudentData">View Students</a></li>
+        </ol>
+    </section>
+
+
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12">
+                <!-- Custom tabs (Charts with tabs)-->
+                <div class="nav-tabs-custom">
+
+                    <!-- TO DO List -->
+                    <div class="box box-primary">
+
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                            <div class="tab-pane" id="tab_2">
+
+                                                <div class="row container">
+                                                    <h3 class="section">Student Registration</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <hr />
+
+
+                                                    <form method="post" enctype="multipart/form-data">
+                                                        <input type="hidden" id="urlpath" value="@ViewData["basePath"]" />
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                                            <div class="row">
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">School</label>
+                                                                        @if (Model.Schools == null)
+                                                                        {
+
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <select class="form-control" asp-for="StudentSchool" required>
+                                                                                <option value="">Please Select</option>
+                                                                                @foreach (var item in Model.Schools)
+                                                                                {
+                                                                                    <option value="@item.SchoolName">@item.SchoolName</option>
+
+                                                                                }
+                                                                            </select>
+
+                                                                        }
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Class</label>
+
+                                                                        <select class="form-control" asp-for="StudentClass" required>
+                                                                            <option value="0">Please Select</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">First Name</label>
+                                                                        <input asp-for="StudentFirstName" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Last Name</label>
+                                                                        <input asp-for="StudentLastName" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Display Name</label>
+                                                                        <input asp-for="StudentDisplayName" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Gender</label>
+                                                                        <select class="form-control" asp-for="StudentGender" required>
+                                                                            <option value="">Please Select</option>
+                                                                            <option value="Male">Male</option>
+                                                                            <option value="Female">Female</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Session</label>
+                                                                        <input asp-for="StudentSession" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Email</label>
+                                                                        <input asp-for="StudentEmail" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">User Name</label>
+                                                                        <input asp-for="StudentUserName" required class="form-control" type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="col-md-6 col-md-offset-3">
+                                                                        <a href="AddSchool" class="btn btn-primary">Back</a>
+                                                                        <input type="submit" class="btn btn-success" value="Save." name="savemore">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+
+
+                                            </div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+
+    <!-- right col -->
+</div>
+

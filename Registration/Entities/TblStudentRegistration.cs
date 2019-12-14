@@ -16,7 +16,7 @@ namespace Registration.Entities
         public int? State { get; set; }
         public int? Country { get; set; }
         public string PostalCode { get; set; }
-        public string SchoolCode { get; set; }
+        public string SchoolName { get; set; }
         public string Session { get; set; }
         public string FatherName { get; set; }
         public string FatherMobile { get; set; }
@@ -36,5 +36,6 @@ namespace Registration.Entities
         public string StudentIdBelouga { get; set; }
         public string ClassIdBelouga { get; set; }
         public int StudentRegistrationId { get; set; }
+        public string ClassName { get; set; }
     }
 }

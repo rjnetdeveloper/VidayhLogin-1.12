@@ -32,9 +32,25 @@
             if (myVal == "Existing") {
                 $('#ExistingSchool').show();
                 $('#NewSchool').hide();
+                document.getElementById("SchoolEmail").readOnly = true;
+                document.getElementById("SchoolAddress").readOnly = true;
+                document.getElementById("SchoolCity").readOnly = true;
+                document.getElementById("SchoolState").disabled  = true;
+                document.getElementById("SchoolCountry").disabled  = true;
+                document.getElementById("SchoolPostalCode").readOnly = true;
+                document.getElementById("SchoolPhoneNo").readOnly = true;
+                document.getElementById("schoollogo").disableSelection = true;
             } else {
                 $('#NewSchool').show();
                 $('#ExistingSchool').hide();
+                document.getElementById("SchoolEmail").readOnly = false;
+                document.getElementById("SchoolAddress").readOnly = false;
+                document.getElementById("SchoolCity").readOnly = false;
+                document.getElementById("SchoolState").disabled  = false;
+                document.getElementById("SchoolCountry").disabled  = false;
+                document.getElementById("SchoolPostalCode").readOnly = false;
+                document.getElementById("SchoolPhoneNo").readOnly = false;
+                document.getElementById("schoollogo").disableSelection = false;
             }
         });
     </script>
@@ -45,78 +61,50 @@
                 if ($(this).val() == 'Existing') {
                     $('#ExistingSchool').show();
                     $('#NewSchool').hide();
+                    $('#SchoolName').disableSelection();
+                    document.getElementById("SchoolEmail").readOnly = true;
+                    document.getElementById("SchoolAddress").readOnly = true;
+                    document.getElementById("SchoolCity").readOnly = true;
+                    document.getElementById("SchoolState").disabled  = true;
+                    document.getElementById("SchoolCountry").disabled  = true;
+                    document.getElementById("SchoolPostalCode").readOnly = true;
+                    document.getElementById("SchoolPhoneNo").readOnly = true;
+                    document.getElementById("schoollogo").disableSelection = true;
                 }
                 else {
                     $('#ExistingSchool').hide();
                     $('#NewSchool').show();
+                    document.getElementById("SchoolEmail").readOnly = false;
+                    document.getElementById("SchoolAddress").readOnly = false;
+                    document.getElementById("SchoolCity").readOnly = false;
+                    document.getElementById("SchoolState").disabled  = false;
+                    document.getElementById("SchoolCountry").disabled  = false;
+                    document.getElementById("SchoolPostalCode").readOnly = false;
+                    document.getElementById("SchoolPhoneNo").readOnly = false;
+                    document.getElementById("schoollogo").disableSelection = false;
                 }
             });
         });
     </script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //  var url = $("#urlpath").val();
-            
-            $('#StudentSchool').change(function () {
-                
-                getclassByschool($(this).val());
-            });
-
-
-            function getclassByschool(id) {
-              //  url = url + 'api/SubFolder/SubFolder/' + id;
-                var url = "http://localhost:16120/api/Class/Class/" + id;
-                BindTable1(id);
-            }
-
-        });
-    </script>
-
-    <script>
-        function BindTable1(id) {
-            var i = 1;
-            var url = $("#urlpath").val();
-            $.ajax({
-
-                type: "GET",
-              //  url: url + 'api/SubFolder/SubFolder/' + id,
-                url: "http://localhost:16120/api/Class/Class/" + id,
-
-                data: "[]",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-
-                success: function (data) {
-                   
-                    var ddlOption = $("[id*=StudentClass]");
-                  
-                    $.each(data.data, function (index, item) {
-                        ddlOption.append($("<option></option>").val(item.ClassIdBelouga).html(item.Class));
-                    });
-
-                  
-                }
-            });
-        }
-    </script>
+    
 
 </head>
 
-            <body class="hold-transition skin-blue sidebar-mini">
-                <SCRIPT language=Javascript>
+<body class="hold-transition skin-blue sidebar-mini">
+    <SCRIPT language=Javascript>
                     <!--
-            function isNumberKey(evt) {
-                var charCode = (evt.which) ? evt.which : evt.keyCode;
-                    if (charCode != 46 && charCode > 31
-                    && (charCode < 48 || charCode > 57))
-                    return false;
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31
+                && (charCode < 48 || charCode > 57))
+                return false;
 
-                return true;
-            }
-            //-->
-    </script>
+            return true;
+        }
+        //-->
+    </SCRIPT>
 
 
     <div class="wrapper">
@@ -127,7 +115,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>Princetonhive</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Princetonhive</b></span>
+                <span class="logo-lg"><img src="images/logo/logo.png" class="img-fluid" alt="Princetonhive" width="100px" lenth="100px"></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -341,111 +329,111 @@
                                                                             </div>
 
                                                                         </div>
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School Email</label>
-                                                                                    <input asp-for="SchoolEmail" name="SchoolEmail" class="form-control" type="text">
-                                                                                </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School Email</label>
+                                                                                <input asp-for="SchoolEmail" name="SchoolEmail" class="form-control" type="text">
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School Address</label>
-                                                                                    <input asp-for="SchoolAddress" name="SchoolAddress" class="form-control" type="text">
-                                                                                </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School Address</label>
+                                                                                <input asp-for="SchoolAddress" name="SchoolAddress" class="form-control" type="text">
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School City</label>
-                                                                                    <input asp-for="SchoolCity" name="SchoolCity" class="form-control" type="text">
-                                                                                </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School City</label>
+                                                                                <input asp-for="SchoolCity" name="SchoolCity" class="form-control" type="text">
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School State</label>
-                                                                                    @if (Model.States == null)
-                                                                                    {
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School State</label>
+                                                                                @if (Model.States == null)
+                                                                                {
 
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        <select class="form-control" asp-for="SchoolState" id="SchoolState" name="SchoolState">
-                                                                                            <option value="">Please Select</option>
-                                                                                            @foreach (var item in Model.States)
-                                                                                            {
-                                                                                                <option value="@item.Stateid">@item.StateName</option>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <select class="form-control" asp-for="SchoolState" id="SchoolState" name="SchoolState">
+                                                                                        <option value="">Please Select</option>
+                                                                                        @foreach (var item in Model.States)
+                                                                                        {
+                                                                                            <option value="@item.Stateid">@item.StateName</option>
 
-                                                                                            }
-                                                                                        </select>
+                                                                                        }
+                                                                                    </select>
 
-                                                                                    }
+                                                                                }
 
-                                                                                </div>
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School Country</label>
-                                                                                    @if (Model.Countrys == null)
-                                                                                    {
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School Country</label>
+                                                                                @if (Model.Countrys == null)
+                                                                                {
 
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        <select class="form-control" asp-for="SchoolCountry" id="SchoolCountry" name="SchoolCountry">
-                                                                                            <option value="">Please Select</option>
-                                                                                            @foreach (var item in Model.Countrys)
-                                                                                            {
-                                                                                                <option value="@item.Countryid">@item.CountryName</option>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <select class="form-control" asp-for="SchoolCountry" id="SchoolCountry" name="SchoolCountry">
+                                                                                        <option value="">Please Select</option>
+                                                                                        @foreach (var item in Model.Countrys)
+                                                                                        {
+                                                                                            <option value="@item.Countryid">@item.CountryName</option>
 
-                                                                                            }
-                                                                                        </select>
+                                                                                        }
+                                                                                    </select>
 
-                                                                                    }
+                                                                                }
 
-                                                                                </div>
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School PostalCode</label>
-                                                                                    <input asp-for="SchoolPostalCode" name="SchoolPostalCode" class="form-control" type="text">
-                                                                                </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School PostalCode</label>
+                                                                                <input asp-for="SchoolPostalCode" name="SchoolPostalCode" class="form-control" type="text">
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">School Phone No</label>
-                                                                                    <input asp-for="SchoolPhoneNo" name="SchoolPhoneNo" class="form-control" type="text">
-                                                                                </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">School Phone No</label>
+                                                                                <input asp-for="SchoolPhoneNo" name="SchoolPhoneNo" class="form-control" type="text">
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Upload Logo</label>
-                                                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Upload Logo</label>
+                                                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                                                <div class="control-group">
+
+                                                                                    <div class="controls" style="width:210px;">
+                                                                                        <input asp-for="SchoolLogo" type="file" name="Logo1" onchange="readURL(this);" id="imgInp">
+                                                                                    </div>
                                                                                     <div class="control-group">
 
+                                                                                        <label class="control-label"></label>
+
                                                                                         <div class="controls" style="width:210px;">
-                                                                                            <input asp-for="SchoolLogo" type="file" name="Logo1" onchange="readURL(this);" id="imgInp">
-                                                                                        </div>
-                                                                                        <div class="control-group">
+                                                                                            <img id="blah" src="~/dist/img/user_default_image.jpg" />
 
-                                                                                            <label class="control-label"></label>
-
-                                                                                            <div class="controls" style="width:210px;">
-                                                                                                <img id="blah" src="~/dist/img/user_default_image.jpg" />
-
-
-                                                                                            </div>
 
                                                                                         </div>
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
 
-                                                                       
+
 
 
                                                                         <div class="form-group">
@@ -462,10 +450,10 @@
 
 
                                                                 </div>
-
+                                                            </form>
                                                         </div>
                                                     </div>
-                                                    </form>
+
                                                     <!-- /.tab-pane -->
 
 
@@ -590,13 +578,13 @@
 
 
                                                                 </div>
-
+                                                            </form>
                                                         </div>
 
 
 
                                                     </div>
-                                                    </form>
+
                                                     <!-- /.tab-content -->
                                                 </div>
                                                 <!-- nav-tabs-custom -->
@@ -667,37 +655,99 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script>
-
+    <script type="text/javascript">
         $(document).ready(function () {
-            var date = new Date();
-                document.getElementById("CreatedDat").value = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
-                year = date.getFullYear();
-                month = date.getMonth();
-                day = date.getDate();
-                nextYear = new Date(year + 1, month, day);
+           
+            $('#StudentSchool').change(function () {
 
-                document.getElementById("EndDate").value = (nextYear.getMonth() + 1) + '/' + nextYear.getDate() + '/' + nextYear.getFullYear();
-
+                getclassByschool($(this).val());
             });
+
+
+            function getclassByschool(id) {
+                //  url = url + 'api/SubFolder/SubFolder/' + id;
+                var url = "http://localhost:16120/api/Registration/GetClassBySchoolId/" + id;
+                BindClass(id);
+            }
+
+        });
     </script>
 
     <script>
+        function BindClass(id) {
+            var i = 1;
+            var url = $("#urlpath").val();
+            $.ajax({
 
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+                type: "GET",
+                //  url: url + 'api/SubFolder/SubFolder/' + id,
+                url: "http://localhost:16120/api/Registration/GetClassBySchoolId/" + id,
 
-                    reader.onload = function (e) {
-                        $('#blah')
-                            .attr('src', e.target.result)
-                            .width(150)
-                            .height(125);
-                    };
+                data: "[]",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
 
-                    reader.readAsDataURL(input.files[0]);
+                success: function (data) {
+
+                    var ddlOption = $("[id*=StudentClass]");
+
+                    $.each(data.data, function (index, item) {
+                        ddlOption.append($("<option></option>").val(item.ClassIdBelouga).html(item.Class));
+                    });
+
+
                 }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+           
+            $('#SchoolNameExisting').change(function () {
+               
+                getSchoolDetailsByschool($(this).val());
+            });
+
+            function getSchoolDetailsByschool(id) {
+                var url = "http://localhost:16120/api/Registration/GetSchoolDetailsBySchoolId/" + id;
+                BindTable1(id);
             }
+
+        });
+    </script>
+
+    <script>
+        function BindTable1(id) {
+           
+            var i = 1;
+            var url = $("#urlpath").val();
+            $.ajax({
+
+                type: "GET",
+                //  url: url + 'api/SubFolder/SubFolder/' + id,
+                url: "http://localhost:16120/api/Registration/GetSchoolDetailsBySchoolId/" + id,
+
+                data: "[]",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (data) {
+
+                    $("#SchoolEmail").val(data.data[0].SchoolEmail);
+                    $("#SchoolAddress").val(data.data[0].Address);
+                    $("#SchoolCity").val(data.data[0].City);
+                    $("#SchoolState").val(data.data[0].State);
+                    $("#SchoolCountry").val(data.data[0].Country);
+                    $("#SchoolPostalCode").val(data.data[0].PostalCode);
+                    $("#SchoolPhoneNo").val(data.data[0].SchoolPhone);
+                    //   $("#Code").val(data.data[0].Feature);
+
+
+
+                }
+            });
+        }
     </script>
 
 
@@ -705,5 +755,5 @@
 
 
 
-    </body>
+</body>
 </html>

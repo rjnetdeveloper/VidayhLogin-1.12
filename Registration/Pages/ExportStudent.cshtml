@@ -1,0 +1,114 @@
+﻿@page
+@model Registration.ExportStudentModel
+@{
+    ViewData["Title"] = "ExportStudent";
+}
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Dashboard
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active"><a href="ImportExportStudent">Export And Import Student</a></li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-12">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="nav-tabs-custom">
+
+
+
+                        <!-- TO DO List -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <div class="col-md-4"> <h3 class="box-title">Export Student Data </h3> </div>
+
+
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <div>
+
+
+                            </div>
+
+                            <form method="post" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-md-5">
+
+                                    </div>
+                                    <div class="col-md-5">
+
+                                    </div>
+                                    <div class="col-md-2">
+
+                                       
+                                    </div>
+
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        School Name
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        @if (Model.Schools == null)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <select class="form-control" asp-for="StudentSchool" required>
+                                                <option value="">Please Select</option>
+                                                @foreach (var item in Model.Schools)
+                                                {
+                                                    <option value="@item.SchoolName">@item.SchoolName</option>
+
+                                                }
+                                            </select>
+
+                                        }
+                                    </div>
+                                    @*<div class="col-md-3">
+                                        <input type="file" id="fUpload" name="files" class="form-control" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button asp-page-handler="Export" class="btn btn-success" name="savemore" value="Import">Import</button>
+                                    </div>*@
+
+                                    <div class="col-md-3">
+                                        <button asp-page-handler="Export" class="btn btn-warning" name="savemore" value="Export">Export</button>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                    </div>
+                                </div>
+                                <br />
+                                <div id="dvData"></div>
+                            </form>
+                        </div>
+
+
+                </section>
+                <!-- /.Left col -->
+
+
+            </div>
+            <!-- /.row (main row) -->
+
+        </section>
+        <!-- /.content -->
+    </div>
+

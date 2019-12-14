@@ -107,7 +107,7 @@ namespace VendorRegistration.Pages
                 };
                 vendor.VendorApi.Add(studentd);
                 vendor.SaveChanges();
-
+                await Response.WriteAsync("<script language='javascript'>window.alert('Data Saved Successfully');window.location='VendorRegistration';</script>");
             }
             return Page();
         }

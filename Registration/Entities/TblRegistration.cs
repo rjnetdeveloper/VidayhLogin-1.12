@@ -15,20 +15,9 @@ namespace Registration.Entities
         public int? State { get; set; }
         public int? Country { get; set; }
         public string PostalCode { get; set; }
-        public string SchoolCode { get; set; }
         public string Class { get; set; }
         public string Section { get; set; }
         public string Session { get; set; }
-        public string FatherName { get; set; }
-        public string FatherMobile { get; set; }
-        public string FatherEmail { get; set; }
-        public string FatherEducation { get; set; }
-        public string FatherOccupation { get; set; }
-        public string MotherName { get; set; }
-        public string MotherMobile { get; set; }
-        public string MotherEmail { get; set; }
-        public string MotherEducation { get; set; }
-        public string MotherOccupation { get; set; }
         public string Photo { get; set; }
         public string Status { get; set; }
         public string Username { get; set; }
@@ -44,5 +33,6 @@ namespace Registration.Entities
         public string SchoolEmail { get; set; }
         public string City { get; set; }
         public int RegistrationId { get; set; }
+        public string VendorStatus { get; set; }
     }
 }
