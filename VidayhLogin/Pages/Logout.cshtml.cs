@@ -39,7 +39,7 @@ namespace VidayhLogin.Pages
                
             }
             HttpContext.Session.Clear();
-         //   Response.Redirect("https://princetonhive.com");
+            Response.Redirect("https://princetonhive.com");
             return Page();
            
         }

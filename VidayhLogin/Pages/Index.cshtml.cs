@@ -98,6 +98,7 @@ namespace VidayhLogin.Pages
                             string Mobile = Convert.ToString(content.data.FatherMobile);
                             string Email = Convert.ToString(content.data.Email);
                             string Role = Convert.ToString(content.data.Role);
+                            string vendorname = Convert.ToString(content.data.vendorname);
                             //    HttpContext.Session.SetString("fatheremail", fatheremail);
                             HttpContext.Session.SetString("Role", Role);
                             HttpContext.Session.SetString("Mobile", Mobile);
@@ -109,7 +110,8 @@ namespace VidayhLogin.Pages
                             HttpContext.Session.SetString("UserName1", Username);
                             HttpContext.Session.SetString("Username", Username);
                             HttpContext.Session.SetString("token", token);
-                             return RedirectToPage("/Dashboard");
+                            HttpContext.Session.SetString("vendorname", vendorname);
+                             return RedirectToPage("/vendors");
                           //  Response.Redirect("https://belouga.org/api/login/"+token);
                         
                     }
